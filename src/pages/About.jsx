@@ -1,79 +1,88 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   const containerStyle = {
-    padding: "4rem 2rem",
-    background: "#0f172a",
+    padding: "6rem 2rem",
+    background: "#0f172a", // Dark Slate
     color: "#f8fafc",
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
     minHeight: "100vh",
   };
 
   const sectionStyle = {
-    maxWidth: "900px",
-    margin: "0 auto 4rem auto",
+    maxWidth: "1000px",
+    margin: "0 auto 6rem auto",
   };
 
   const titleStyle = {
-    fontSize: "2.5rem",
-    fontWeight: "700",
-    marginBottom: "1.5rem",
-    background: "linear-gradient(to right, #38bdf8, #818cf8)",
-    WebkitBackgroundClip: "text",
-    WebkitTextFillColor: "transparent",
-    display: "inline-block",
+    fontSize: "2.8rem",
+    fontWeight: "800",
+    marginBottom: "2rem",
+    color: "#fbbf24", // Amber accent
+    display: "flex",
+    alignItems: "center",
+    gap: "15px",
+  };
+
+  const lineStyle = {
+    height: "2px",
+    flexGrow: 1,
+    background: "linear-gradient(to right, #fbbf24, transparent)",
   };
 
   const textStyle = {
-    fontSize: "1.1rem",
+    fontSize: "1.2rem",
     lineHeight: "1.8",
     color: "#cbd5e1",
+    backgroundColor: "#1e293b",
+    padding: "2.5rem",
+    borderRadius: "16px",
+    border: "1px solid #334155",
   };
 
   const gridStyle = {
     display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
-    gap: "1rem",
-    marginTop: "1.5rem",
+    gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+    gap: "1.25rem",
+    marginTop: "2rem",
   };
 
   const skillCardStyle = {
     background: "#1e293b",
-    padding: "1rem",
-    borderRadius: "8px",
+    padding: "1.2rem",
+    borderRadius: "12px",
     textAlign: "center",
     border: "1px solid #334155",
-    fontSize: "0.95rem",
-    fontWeight: "500",
-    color: "#38bdf8",
-    transition: "transform 0.2s",
-  };
-
-  const listStyle = {
-    listStyle: "none",
-    padding: 0,
+    fontSize: "1rem",
+    fontWeight: "600",
+    color: "#e2e8f0",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
   };
 
   const listItemStyle = {
     background: "#1e293b",
-    padding: "1.25rem",
-    borderRadius: "12px",
-    marginBottom: "1rem",
-    borderLeft: "4px solid #818cf8",
+    padding: "1.5rem 2rem",
+    borderRadius: "16px",
+    marginBottom: "1.25rem",
+    borderLeft: "6px solid #fbbf24",
     color: "#e2e8f0",
+    border: "1px solid #334155",
+    borderLeftWidth: "6px",
   };
 
   const roleStyle = {
     fontWeight: "700",
     display: "block",
-    fontSize: "1.1rem",
-    color: "#f8fafc",
-    marginBottom: "0.25rem",
+    fontSize: "1.25rem",
+    color: "#fbbf24",
+    marginBottom: "0.5rem",
   };
 
   const orgStyle = {
     color: "#94a3b8",
-    fontSize: "0.9rem",
+    fontSize: "1rem",
+    fontWeight: "500",
   };
 
   const skills = [
@@ -97,43 +106,92 @@ const About = () => {
     { role: "Staff of Creative Event", org: "BPA STEI-K ITB 2024" },
   ];
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
     <div style={containerStyle}>
       {/* Profil Section */}
-      <section style={sectionStyle}>
-        <h2 style={titleStyle}>Profil</h2>
+      <motion.section
+        style={sectionStyle}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div style={titleStyle}>
+          About Me <div style={lineStyle}></div>
+        </div>
         <p style={textStyle}>
-          Mahasiswa aktif dengan kemampuan dasar dalam analisis sistem,
-          pemrograman, dan visualisasi data. Terbiasa bekerja dalam tim untuk
-          menyelesaikan tantangan teknis dan mencapai tujuan bersama secara
-          efisien.
+          Mahasiswa Sistem dan Teknologi Informasi dengan kemampuan dasar dalam
+          analisis sistem, pemrograman, dan visualisasi data. Terbiasa bekerja
+          dalam tim untuk menyelesaikan tantangan teknis dan mencapai tujuan
+          bersama secara efisien.
         </p>
-      </section>
+      </motion.section>
 
       {/* Tech Stack Section */}
-      <section style={sectionStyle}>
-        <h2 style={titleStyle}>Tech Stack</h2>
+      <motion.section
+        style={sectionStyle}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div style={titleStyle}>
+          Tech Stack <div style={lineStyle}></div>
+        </div>
         <div style={gridStyle}>
-          {skills.map((skill) => (
-            <div key={skill} style={skillCardStyle}>
+          {skills.map((skill, index) => (
+            <motion.div
+              key={skill}
+              style={skillCardStyle}
+              whileHover={{
+                scale: 1.05,
+                borderColor: "#fbbf24",
+                color: "#fbbf24",
+                boxShadow: "0 10px 15px -3px rgba(251, 191, 36, 0.2)",
+              }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: index * 0.05 }}
+            >
               {skill}
-            </div>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* Pengalaman Organisasi Section */}
-      <section style={sectionStyle}>
-        <h2 style={titleStyle}>Pengalaman Organisasi</h2>
-        <ul style={listStyle}>
+      <motion.section
+        style={sectionStyle}
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div style={titleStyle}>
+          Pengalaman Organisasi <div style={lineStyle}></div>
+        </div>
+        <div style={{ padding: 0 }}>
           {experience.map((item, index) => (
-            <li key={index} style={listItemStyle}>
+            <motion.div
+              key={index}
+              style={listItemStyle}
+              whileHover={{ x: 10, borderColor: "#fbbf24" }}
+            >
               <span style={roleStyle}>{item.role}</span>
               <span style={orgStyle}>{item.org}</span>
-            </li>
+            </motion.div>
           ))}
-        </ul>
-      </section>
+        </div>
+      </motion.section>
     </div>
   );
 };

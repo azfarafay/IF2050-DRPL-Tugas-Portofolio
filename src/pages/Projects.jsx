@@ -1,129 +1,160 @@
-import React from 'react';
+import React from "react";
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const containerStyle = {
-    padding: '4rem 2rem',
-    background: '#0f172a',
-    color: '#f8fafc',
+    padding: "6rem 2rem",
+    background: "#0f172a", // Dark Slate
+    color: "#f8fafc",
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
-    minHeight: '100vh',
+    minHeight: "100vh",
   };
 
   const headerStyle = {
-    textAlign: 'center',
-    marginBottom: '4rem',
+    textAlign: "center",
+    marginBottom: "5rem",
   };
 
   const titleStyle = {
-    fontSize: '3rem',
-    fontWeight: '800',
-    background: 'linear-gradient(to right, #38bdf8, #818cf8)',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    marginBottom: '1rem',
+    fontSize: "3.5rem",
+    fontWeight: "800",
+    color: "#fbbf24", // Amber accent
+    marginBottom: "1rem",
+    letterSpacing: "-0.02em",
   };
 
   const gridStyle = {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-    gap: '2.5rem',
-    maxWidth: '1100px',
-    margin: '0 auto',
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
+    gap: "3rem",
+    maxWidth: "1200px",
+    margin: "0 auto",
   };
 
   const cardStyle = {
-    background: '#1e293b',
-    borderRadius: '16px',
-    padding: '2rem',
-    border: '1px solid #334155',
-    display: 'flex',
-    flexDirection: 'column',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    cursor: 'default',
+    background: "#1e293b",
+    borderRadius: "20px",
+    padding: "2.5rem",
+    border: "1px solid #334155",
+    display: "flex",
+    flexDirection: "column",
+    position: "relative",
+    overflow: "hidden",
   };
 
   const projectTitleStyle = {
-    fontSize: '1.5rem',
-    fontWeight: '700',
-    color: '#38bdf8',
-    marginBottom: '0.5rem',
+    fontSize: "1.8rem",
+    fontWeight: "700",
+    color: "#f8fafc",
+    marginBottom: "0.75rem",
   };
 
   const roleStyle = {
-    fontSize: '0.9rem',
-    color: '#818cf8',
-    fontWeight: '600',
-    textTransform: 'uppercase',
-    letterSpacing: '0.05em',
-    marginBottom: '0.25rem',
+    fontSize: "0.95rem",
+    color: "#fbbf24", // Amber accent
+    fontWeight: "700",
+    textTransform: "uppercase",
+    letterSpacing: "0.1em",
+    marginBottom: "0.5rem",
   };
 
   const dateStyle = {
-    fontSize: '0.85rem',
-    color: '#94a3b8',
-    marginBottom: '1.5rem',
+    fontSize: "0.9rem",
+    color: "#94a3b8",
+    marginBottom: "1.5rem",
+    display: "block",
   };
 
   const descStyle = {
-    fontSize: '1rem',
-    lineHeight: '1.6',
-    color: '#cbd5e1',
+    fontSize: "1.1rem",
+    lineHeight: "1.7",
+    color: "#cbd5e1",
+    marginBottom: "2rem",
   };
 
   const tagContainerStyle = {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '0.5rem',
-    marginTop: 'auto',
-    paddingTop: '1.5rem',
+    display: "flex",
+    flexWrap: "wrap",
+    gap: "0.75rem",
+    marginTop: "auto",
   };
 
   const tagStyle = {
-    background: '#0f172a',
-    color: '#94a3b8',
-    padding: '0.25rem 0.75rem',
-    borderRadius: '999px',
-    fontSize: '0.75rem',
-    border: '1px solid #334155',
+    background: "rgba(251, 191, 36, 0.1)",
+    color: "#fbbf24",
+    padding: "0.4rem 1rem",
+    borderRadius: "10px",
+    fontSize: "0.85rem",
+    fontWeight: "600",
+    border: "1px solid rgba(251, 191, 36, 0.2)",
   };
 
   const projects = [
     {
-      title: 'B2B Roastery Management Platform',
-      role: 'Full Stack Developer',
-      date: 'Februari 2026 - Juni 2026',
-      desc: 'Mendigitalisasi manajemen inventaris dan transaksi antara Roastery kopi dan Coffee Shop. Membangun arsitektur decoupled dengan keamanan tingkat lanjut (JWT, Cloudflare Zero Trust) dan dashboard analitik interaktif.',
-      tags: ['React.js', 'Node.js', 'Express.js', 'MySQL', 'Recharts', 'JWT']
+      title: "B2B Roastery Management Platform",
+      role: "Full Stack Developer",
+      date: "Februari 2026 - Juni 2026",
+      desc: "Mendigitalisasi manajemen inventaris dan transaksi antara Roastery kopi dan Coffee Shop. Membangun arsitektur decoupled dengan keamanan tingkat lanjut (JWT, Cloudflare Zero Trust) dan dashboard analitik interaktif.",
+      tags: ["React.js", "Node.js", "Express.js", "MySQL", "JWT"],
     },
     {
-      title: 'Program Manajemen Rumah Sakit',
-      role: 'Developer',
-      date: 'April 2025 - Juni 2025',
-      desc: 'Mengembangkan program berbasis C untuk manajemen data medis terpadu. Menerapkan struktur data kompleks seperti array dan struct, serta algoritma sorting dan searching untuk efisiensi pengolahan data pasien.',
-      tags: ['C Language', 'Algorithms', 'Data Structures', 'Modular Programming']
-    }
+      title: "Program Manajemen Rumah Sakit",
+      role: "Developer",
+      date: "April 2025 - Juni 2025",
+      desc: "Mengembangkan program berbasis C untuk manajemen data medis terpadu. Menerapkan struktur data kompleks seperti array dan struct, serta algoritma sorting dan searching untuk efisiensi pengolahan data pasien.",
+      tags: [
+        "C Language",
+        "Algorithms",
+        "Data Structures",
+        "Modular Programming",
+      ],
+    },
   ];
 
   return (
     <div style={containerStyle}>
-      <header style={headerStyle}>
-        <h1 style={titleStyle}>Proyek Saya</h1>
-        <p style={{ color: '#94a3b8' }}>Kumpulan karya dan kontribusi teknis pilihan.</p>
-      </header>
+      <motion.header
+        style={headerStyle}
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 style={titleStyle}>Projects</h1>
+        <p style={{ color: "#94a3b8", fontSize: "1.2rem" }}>
+          Eksplorasi solusi teknis dan pengembangan sistem informasi.
+        </p>
+      </motion.header>
 
       <div style={gridStyle}>
         {projects.map((project, index) => (
-          <div key={index} style={cardStyle}>
+          <motion.div
+            key={index}
+            style={cardStyle}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.2, duration: 0.8 }}
+            whileHover={{
+              y: -10,
+              scale: 1.02,
+              boxShadow:
+                "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(251, 191, 36, 0.1)",
+              borderColor: "#fbbf24",
+            }}
+          >
             <span style={roleStyle}>{project.role}</span>
             <h2 style={projectTitleStyle}>{project.title}</h2>
             <span style={dateStyle}>{project.date}</span>
             <p style={descStyle}>{project.desc}</p>
             <div style={tagContainerStyle}>
-              {project.tags.map(tag => (
-                <span key={tag} style={tagStyle}>{tag}</span>
+              {project.tags.map((tag) => (
+                <span key={tag} style={tagStyle}>
+                  {tag}
+                </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
