@@ -168,6 +168,11 @@ const Hero = () => {
             style={primaryBtnStyle}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() =>
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Lihat Proyek
           </motion.button>
@@ -175,6 +180,11 @@ const Hero = () => {
             style={secondaryBtnStyle}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             Hubungi Saya
           </motion.button>
