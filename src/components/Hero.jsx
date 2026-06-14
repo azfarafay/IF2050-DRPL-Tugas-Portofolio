@@ -186,7 +186,7 @@ const Hero = () => {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Hubungi Saya
+            Mari Berkolaborasi
           </motion.button>
         </motion.div>
       </motion.div>
