@@ -10,7 +10,7 @@ body {
         system-ui,
         -apple-system,
         sans-serif;
-    background-color: #111827; /* Warna Dark Slate */
-    color: #f3f4f6; /* Warna Teks Putih Keabu-abuan */
+    background-color: #f0f0f0; /* Light Mode background */
+    color: #2d3748; /* Dark Slate Gray for readability */
     line-height: 1.5;
 }

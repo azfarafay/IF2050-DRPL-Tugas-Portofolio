@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const containerStyle = {
     padding: "6rem 2rem",
-    background: "#0f172a", // Dark Slate
-    color: "#f8fafc",
+    background: "#f0f0f0", // Light background
+    color: "#2D3748", // Dark text
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
     minHeight: "100vh",
   };
@@ -18,7 +18,7 @@ const Projects = () => {
   const titleStyle = {
     fontSize: "3.5rem",
     fontWeight: "800",
-    color: "#fbbf24", // Amber accent
+    color: "#38B2AC", // Teal accent
     marginBottom: "1rem",
     letterSpacing: "-0.02em",
   };
@@ -32,10 +32,10 @@ const Projects = () => {
   };
 
   const cardStyle = {
-    background: "#1e293b",
+    background: "#EDF2F7", // Card background
     borderRadius: "20px",
     padding: "2.5rem",
-    border: "1px solid #334155",
+    border: "1px solid #CBD5E1", // Light border
     display: "flex",
     flexDirection: "column",
     position: "relative",
@@ -45,13 +45,13 @@ const Projects = () => {
   const projectTitleStyle = {
     fontSize: "1.8rem",
     fontWeight: "700",
-    color: "#f8fafc",
+    color: "#2D3748", // Dark text
     marginBottom: "0.75rem",
   };
 
   const roleStyle = {
     fontSize: "0.95rem",
-    color: "#fbbf24", // Amber accent
+    color: "#38B2AC", // Teal accent
     fontWeight: "700",
     textTransform: "uppercase",
     letterSpacing: "0.1em",
@@ -60,7 +60,7 @@ const Projects = () => {
 
   const dateStyle = {
     fontSize: "0.9rem",
-    color: "#94a3b8",
+    color: "#4A5568", // Secondary text
     marginBottom: "1.5rem",
     display: "block",
   };
@@ -68,7 +68,7 @@ const Projects = () => {
   const descStyle = {
     fontSize: "1.1rem",
     lineHeight: "1.7",
-    color: "#cbd5e1",
+    color: "#4A5568", // Secondary text
     marginBottom: "2rem",
   };
 
@@ -80,13 +80,13 @@ const Projects = () => {
   };
 
   const tagStyle = {
-    background: "rgba(251, 191, 36, 0.1)",
-    color: "#fbbf24",
+    background: "rgba(56, 178, 172, 0.1)", // Teal transparency
+    color: "#38B2AC", // Teal accent
     padding: "0.4rem 1rem",
     borderRadius: "10px",
     fontSize: "0.85rem",
     fontWeight: "600",
-    border: "1px solid rgba(251, 191, 36, 0.2)",
+    border: "1px solid rgba(56, 178, 172, 0.2)",
   };
 
   const projects = [
@@ -112,7 +112,7 @@ const Projects = () => {
   ];
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} id="projects">
       <motion.header
         style={headerStyle}
         initial={{ opacity: 0, y: -20 }}
@@ -121,7 +121,7 @@ const Projects = () => {
         transition={{ duration: 0.8 }}
       >
         <h1 style={titleStyle}>Projects</h1>
-        <p style={{ color: "#94a3b8", fontSize: "1.2rem" }}>
+        <p style={{ color: "#4A5568", fontSize: "1.2rem" }}>
           Eksplorasi solusi teknis dan pengembangan sistem informasi.
         </p>
       </motion.header>
@@ -138,9 +138,8 @@ const Projects = () => {
             whileHover={{
               y: -10,
               scale: 1.02,
-              boxShadow:
-                "0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(251, 191, 36, 0.1)",
-              borderColor: "#fbbf24",
+              boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.05)", // Soft shadow
+              borderColor: "#38B2AC",
             }}
           >
             <span style={roleStyle}>{project.role}</span>

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const About = () => {
   const containerStyle = {
     padding: "6rem 2rem",
-    background: "#0f172a", // Dark Slate
-    color: "#f8fafc",
+    background: "#f0f0f0", // Clean Light background
+    color: "#2D3748", // Dark text
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
     minHeight: "100vh",
   };
@@ -19,7 +19,7 @@ const About = () => {
     fontSize: "2.8rem",
     fontWeight: "800",
     marginBottom: "2rem",
-    color: "#fbbf24", // Amber accent
+    color: "#38B2AC", // Teal accent
     display: "flex",
     alignItems: "center",
     gap: "15px",
@@ -28,17 +28,17 @@ const About = () => {
   const lineStyle = {
     height: "2px",
     flexGrow: 1,
-    background: "linear-gradient(to right, #fbbf24, transparent)",
+    background: "linear-gradient(to right, #38B2AC, transparent)",
   };
 
   const textStyle = {
     fontSize: "1.2rem",
     lineHeight: "1.8",
-    color: "#cbd5e1",
-    backgroundColor: "#1e293b",
+    color: "#4A5568", // Secondary text
+    backgroundColor: "#EDF2F7", // Card background
     padding: "2.5rem",
     borderRadius: "16px",
-    border: "1px solid #334155",
+    border: "1px solid #CBD5E1", // Light border
   };
 
   const gridStyle = {
@@ -49,25 +49,25 @@ const About = () => {
   };
 
   const skillCardStyle = {
-    background: "#1e293b",
+    background: "#EDF2F7",
     padding: "1.2rem",
     borderRadius: "12px",
     textAlign: "center",
-    border: "1px solid #334155",
+    border: "1px solid #CBD5E1",
     fontSize: "1rem",
     fontWeight: "600",
-    color: "#e2e8f0",
-    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
+    color: "#4A5568",
+    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05)",
   };
 
   const listItemStyle = {
-    background: "#1e293b",
+    background: "#EDF2F7",
     padding: "1.5rem 2rem",
     borderRadius: "16px",
     marginBottom: "1.25rem",
-    borderLeft: "6px solid #fbbf24",
-    color: "#e2e8f0",
-    border: "1px solid #334155",
+    borderLeft: "6px solid #38B2AC",
+    color: "#4A5568",
+    border: "1px solid #CBD5E1",
     borderLeftWidth: "6px",
   };
 
@@ -75,12 +75,12 @@ const About = () => {
     fontWeight: "700",
     display: "block",
     fontSize: "1.25rem",
-    color: "#fbbf24",
+    color: "#38B2AC",
     marginBottom: "0.5rem",
   };
 
   const orgStyle = {
-    color: "#94a3b8",
+    color: "#4A5568",
     fontSize: "1rem",
     fontWeight: "500",
   };
@@ -116,7 +116,7 @@ const About = () => {
   };
 
   return (
-    <div style={containerStyle}>
+    <div style={containerStyle} id="about">
       {/* Profil Section */}
       <motion.section
         style={sectionStyle}
@@ -154,9 +154,9 @@ const About = () => {
               style={skillCardStyle}
               whileHover={{
                 scale: 1.05,
-                borderColor: "#fbbf24",
-                color: "#fbbf24",
-                boxShadow: "0 10px 15px -3px rgba(251, 191, 36, 0.2)",
+                borderColor: "#38B2AC",
+                color: "#38B2AC",
+                boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)",
               }}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -184,7 +184,7 @@ const About = () => {
             <motion.div
               key={index}
               style={listItemStyle}
-              whileHover={{ x: 10, borderColor: "#fbbf24" }}
+              whileHover={{ x: 10, borderColor: "#38B2AC" }}
             >
               <span style={roleStyle}>{item.role}</span>
               <span style={orgStyle}>{item.org}</span>

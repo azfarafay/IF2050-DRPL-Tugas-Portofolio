@@ -10,35 +10,35 @@ const Hero = () => {
     justifyContent: "space-between",
     alignItems: "center",
     minHeight: "85vh",
-    padding: "6rem 5%", // Menggunakan persen agar marginnya pas di berbagai layar
-    backgroundColor: "#111827",
-    color: "#f9fafb",
+    padding: "6rem 5%",
+    backgroundColor: "#f0f0f0", // Light background
+    color: "#2D3748", // Dark text
     fontFamily: "'Inter', system-ui, -apple-system, sans-serif",
     gap: "3rem",
-    flexWrap: "wrap", // Agar otomatis turun ke bawah jika dibuka di HP
+    flexWrap: "wrap",
   };
 
   // 2. Kolom Kiri (Foto) - Proporsi 40%
   const imageContainerStyle = {
-    flex: "0 0 40%", // Memaksa lebar tepat 40%
+    flex: "0 0 40%",
     display: "flex",
     justifyContent: "center",
-    minWidth: "300px", // Mencegah foto terlalu kecil di layar sempit
+    minWidth: "300px",
   };
 
   const imageStyle = {
     width: "100%",
-    maxWidth: "480px", // Diperbesar dari sebelumnya
-    aspectRatio: "4/5", // Proporsi vertikal yang pas untuk foto profil
+    maxWidth: "480px",
+    aspectRatio: "4/5",
     objectFit: "cover",
     borderRadius: "24px",
-    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)", // Bayangan lebih dalam
-    border: "2px solid rgba(16, 185, 129, 0.3)", // Aksen emerald tipis
+    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)", // Softer shadow
+    border: "2px solid rgba(56, 178, 172, 0.3)", // Teal accent border
   };
 
   // 3. Kolom Kanan (Teks) - Proporsi 60%
   const textContainerStyle = {
-    flex: "1 1 50%", // Akan mengambil sisa ruang (sekitar 60% dikurangi gap)
+    flex: "1 1 50%",
     display: "flex",
     flexDirection: "column",
     alignItems: "flex-start",
@@ -49,7 +49,7 @@ const Hero = () => {
   // 4. Style Teks & Tombol
   const greetingStyle = {
     fontSize: "clamp(1rem, 1.5vw, 1.25rem)",
-    color: "#9ca3af",
+    color: "#4A5568", // Secondary text color
     fontWeight: "600",
     marginBottom: "1rem",
     letterSpacing: "0.15em",
@@ -60,7 +60,7 @@ const Hero = () => {
     fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
     fontWeight: "800",
     marginBottom: "0.5rem",
-    color: "#f8fafc", // Putih terang (Off-white)
+    color: "#2D3748", // Dark text
     lineHeight: "1.1",
     letterSpacing: "-0.02em",
   };
@@ -68,7 +68,7 @@ const Hero = () => {
   const subTitleStyle = {
     fontSize: "clamp(1.2rem, 2.5vw, 1.5rem)",
     fontWeight: "600",
-    color: "#e5e7eb",
+    color: "#4A5568",
     marginBottom: "1.5rem",
     lineHeight: "1.4",
   };
@@ -77,7 +77,7 @@ const Hero = () => {
     fontSize: "1.125rem",
     lineHeight: "1.8",
     maxWidth: "600px",
-    color: "#9ca3af",
+    color: "#4A5568",
     marginBottom: "2.5rem",
   };
 
@@ -89,24 +89,24 @@ const Hero = () => {
 
   const primaryBtnStyle = {
     padding: "0.875rem 2rem",
-    backgroundColor: "#10b981",
-    color: "#111827",
+    backgroundColor: "#38B2AC", // Teal accent
+    color: "#ffffff",
     borderRadius: "12px",
     fontWeight: "700",
     fontSize: "1rem",
     border: "none",
     cursor: "pointer",
-    boxShadow: "0 10px 15px -3px rgba(16, 185, 129, 0.2)",
+    boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.05)",
   };
 
   const secondaryBtnStyle = {
     padding: "0.875rem 2rem",
     backgroundColor: "transparent",
-    color: "#10b981",
+    color: "#38B2AC", // Teal accent
     borderRadius: "12px",
     fontWeight: "700",
     fontSize: "1rem",
-    border: "2px solid #10b981",
+    border: "2px solid #38B2AC",
     cursor: "pointer",
   };
 
@@ -154,7 +154,7 @@ const Hero = () => {
 
         <motion.h2 style={subTitleStyle} variants={itemVariants}>
           Mahasiswa Sistem dan Teknologi Informasi di <br />
-          <span style={{ color: "#10b981" }}>Institut Teknologi Bandung</span>
+          <span style={{ color: "#38B2AC" }}>Institut Teknologi Bandung</span>
         </motion.h2>
 
         <motion.p style={descriptionStyle} variants={itemVariants}>
